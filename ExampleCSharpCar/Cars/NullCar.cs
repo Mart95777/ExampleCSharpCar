@@ -9,10 +9,12 @@ namespace ExampleCSharpCar.Cars
 
         public NullCar()
         {
-            Engine = new NoneEngine();
-            Purpose = new NoPurpose();
+            // Base class assigns null engine and no purpose. Additional fields, if you add some, put below.
         }
         #endregion Constructors
+
+        #region Operations
+
         /// <summary>
         /// Null car implementation of car make method.
         /// </summary>
@@ -21,5 +23,6 @@ namespace ExampleCSharpCar.Cars
         {
             base.WhatCarIsIt("Not specified.");
         }
+        #endregion Operations
     }
 }
