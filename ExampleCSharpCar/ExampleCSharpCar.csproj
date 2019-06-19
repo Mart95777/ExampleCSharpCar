@@ -42,11 +42,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarDemo.cs" />
+    <Compile Include="CarFactory.cs" />
+    <Compile Include="Cars\Car.cs" />
+    <Compile Include="Cars\NullCar.cs" />
+    <Compile Include="Cars\StanleyCar.cs" />
+    <Compile Include="Engines\DieselEngine.cs" />
+    <Compile Include="Engines\ElectricEngine.cs" />
+    <Compile Include="Engines\GasolineEngine.cs" />
+    <Compile Include="Engines\NoneEngine.cs" />
+    <Compile Include="Engines\SteamEngine.cs" />
+    <Compile Include="IEngineType.cs" />
+    <Compile Include="IPurpose.cs" />
+    <Compile Include="Cars\OpelCar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Cars\VolvoCar.cs" />
+    <Compile Include="Purposes\GroceriesPurpose.cs" />
+    <Compile Include="Purposes\NoPurpose.cs" />
+    <Compile Include="Purposes\RacingPurpose.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
