@@ -48,22 +48,27 @@ namespace ExampleCSharpCar
             Console.WriteLine("=== === === * * * === === ===");
 
             // Try the cars
-            foreach (Car car in myCars)
-            {
-                car.WhatCarIsIt();
-                Console.WriteLine(car.Engine.StartEngine());
-                Console.Write("The car now is doing : ");
-                car.Purpose.DoTheAction();
-                Console.WriteLine("===========");
-            }
+            PrintCars(myCars);
 
-            Console.WriteLine("=== === === * * * === === === \n");
-            Console.WriteLine("Change of mind, some cars get reworked.");
-            Console.WriteLine("=== === === * * * === === ===");
+            PrintChangeDivider();
 
-            foreach (Car car in myCars)
+            ReworkCars(myCars);
+
+            PrintCars(myCars);
+
+            Console.ReadLine();
+
+        }
+
+        /// <summary>
+        /// Reworks cars. Assigns groceries for Stanley and makes electric cars to race. Hardcode.
+        /// </summary>
+        /// <param name="cars">List of cars to be reworked.</param>
+        private void ReworkCars(List<Car> cars)
+        {
+            foreach (Car car in cars)
             {
-                
+
                 if (car is StanleyCar) car.Purpose = new GroceriesPurpose();
 
                 if (car is VolvoCar)
@@ -72,8 +77,25 @@ namespace ExampleCSharpCar
                     car.Purpose = new RacingPurpose();
                 }
             }
+        }
 
-            foreach (Car car in myCars)
+        /// <summary>
+        /// Prints divider to the console.
+        /// </summary>
+        private void PrintChangeDivider()
+        {
+            Console.WriteLine("=== === === * * * === === === \n");
+            Console.WriteLine("Change of mind, some cars get reworked.");
+            Console.WriteLine("=== === === * * * === === ===");
+        }
+
+        /// <summary>
+        /// Prints cars to the console.
+        /// </summary>
+        /// <param name="cars">List of cars to print.</param>
+        private void PrintCars(List<Car> cars)
+        {
+            foreach (Car car in cars)
             {
                 car.WhatCarIsIt();
                 Console.WriteLine(car.Engine.StartEngine());
@@ -81,9 +103,6 @@ namespace ExampleCSharpCar
                 car.Purpose.DoTheAction();
                 Console.WriteLine("===========");
             }
-
-            Console.ReadLine();
-
         }
     }
 
